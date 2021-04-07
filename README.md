@@ -26,7 +26,7 @@ docker run -d -p 8080:8080 akhilareddyvanga/url_shortener:latest
 
 Execution
 ```sh
-curl -X POST -F 'url=url to shorten' http://localhost:8080/
+curl -X POST -F 'url=<url to shorten>' http://localhost:8080/
 ```
 Result
 ```sh
@@ -38,7 +38,7 @@ Result
 </body>
 
 ```
-Verify the deployment by navigating to http://localhost:8080/ in your preferred browser.
+For UI view navigate to http://localhost:8080/ in your preferred browser.
 
 ```sh
 http://localhost:8080/
