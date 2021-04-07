@@ -6,7 +6,7 @@ from sqlite3 import OperationalError
 app = Flask(__name__)
 CORS(app)
 counter = 1
-host = 'http://localhost:5000/'
+host = 'http://localhost:8080/'
 
 def init():
     conn = sqlite3.connect('database.db')
@@ -81,4 +81,4 @@ def encode(id):
 
 if __name__ == '__main__':
     init()
-    app.run(debug=True)
+    app.run(host ='0.0.0.0', port = 8080, debug = True)
