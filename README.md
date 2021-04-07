@@ -6,6 +6,7 @@ This is a small url shortener application.
 
 - Converts the given url to a shorter url using base62 encoding 
 - Built using flask
+- Database : sqlite3
 - Simple UI
 - Redirects to the original url on clicking the short url
 
