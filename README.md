@@ -56,6 +56,16 @@ Response:
    </div>
 </body>
 ```
+## Screenshots
+Home page
+![Screenshot](Screenshots/1.PNG)
+
+On clicking Sumbit
+![Screenshot](Screenshots/2.PNG)
+
+After redirection
+![Screenshot](Screenshots/3.PNG)
+
 
 
 
