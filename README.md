@@ -29,6 +29,9 @@ Execution
 curl -X POST -H "Content-Type: application/json" http://localhost:8080/create_short_url -d '{"url": <url_to_shorten>}'
 or
 curl -L -X POST "http://localhost:8080/create_short_url" -F 'url="<url_to_shorten>"'
+
+For Windows:
+curl -X POST -H "Content-Type: application/json" http://localhost:8080/create_short_url -d "{\"url\": \"<url_to_shorten>\"}"
 ```
 Result
 ```sh
