@@ -19,11 +19,15 @@ def init():
         pass
     conn.commit()
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/create_short_url', methods=['GET', 'POST'])
 def home():
     global counter
     if request.method == 'POST':
-        input = request.form
+        if request.headers.get('Content-Type') == 'application/json':
+            input = request.get_json()
+        else:
+            input = request.form
+
         url = input["url"]
         with sqlite3.connect('database.db') as conn:
             cursor = conn.cursor()
@@ -47,11 +51,11 @@ def home():
                     'INSERT INTO URL_MAP (URL, SHORT_URL, COUNTER) VALUES (?,?,?)', (url, short_url, counter+1)
                 )
             conn.commit()
-            return render_template('index.html', short_url=host + str(short_url))
+            return render_template('index.html', short_url=host+str("short_url/") + str(short_url))
 
     return render_template('index.html')
 
-@app.route('/<short_url>')
+@app.route('/short_url/<short_url>')
 def redirect_short_url(short_url):
     try:
         with sqlite3.connect('database.db') as conn:
@@ -63,7 +67,7 @@ def redirect_short_url(short_url):
                     return redirect(original_url[0])
             except Exception as e:
                 print(e)
-        return redirect(host)
+        return redirect(host+str("create_short_url"))
 
     except OverflowError as e:
         print(str(e))
@@ -82,3 +86,4 @@ def encode(id):
 if __name__ == '__main__':
     init()
     app.run(host ='0.0.0.0', port = 8080, debug = True)
+    #app.run(debug=True)
