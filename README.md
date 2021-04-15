@@ -64,13 +64,13 @@ Response:
 ```
 ## Screenshots
 Home page
-![Screenshot](Screenshots/1.PNG)
+![Screenshot](Screenshots/Capture1.PNG)
 
 On clicking Sumbit
-![Screenshot](Screenshots/2.PNG)
+![Screenshot](Screenshots/Capture2.PNG)
 
 After redirection
-![Screenshot](Screenshots/3.PNG)
+![Screenshot](Screenshots/Capture3.PNG)
 
 
 
